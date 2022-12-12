@@ -1,0 +1,37 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+import { GuardGuard } from './guard.guard';
+import { HelloComponent } from './hello.component';
+import { LoginComponent } from './login/login.component';
+import { MainComponent } from './main/main.component';
+
+//const routes: Routes = []; // sets up routes constant where you define your routes
+const routes: Routes = [
+  {
+    path: 'one',
+    component: LoginComponent,
+    // children: [
+    //   {
+    //     path: 'childa', // child route path
+    //     component: HelloComponent, // child route component that the router renders
+    //   },
+    //   // { path: 'childa/:id', component: TwoComponent },
+    //   {
+    //     path: 'childb',
+    //     component: TwoComponent, // another child route component that the router renders
+    //   },
+    // ],
+  },
+  { path: 'two', component: HelloComponent, canActivate: [GuardGuard] },
+  // { path: 'two/:id', component: TwoComponent },
+  // { path: 'three', component: ThreeComponent },
+  // { path: 'three/:id', component: ThreeComponent },
+  // { path: '', redirectTo: '/main', pathMatch: 'full' }, // redirect to `one`
+  { path: 'main', component: MainComponent },
+];
+// configures NgModule imports and exports
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
