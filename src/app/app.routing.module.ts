@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 import { GuardGuard } from './guard.guard';
 import { HelloComponent } from './hello.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './main/login/login.component';
 import { MainComponent } from './main/main.component';
 
 //const routes: Routes = []; // sets up routes constant where you define your routes

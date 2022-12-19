@@ -1,15 +1,13 @@
 <form (ngSubmit)="formSubmit()">
   <div class="form-group">
     <label for="password">Password:</label>
-    <!-- <input
+    <input
       type="password"
       name="password"
       id="password"
       class="form-control"
-      [
-      (ngModel)
-      ]="password"
-    /> -->
+      [(ngModel)]="password"
+    />
   </div>
   <button type="submit" class="btn-default btn">Login</button>
 </form>
