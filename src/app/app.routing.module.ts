@@ -27,7 +27,7 @@ const routes: Routes = [
   // { path: 'three', component: ThreeComponent },
   // { path: 'three/:id', component: ThreeComponent },
   // { path: '', redirectTo: '/main', pathMatch: 'full' }, // redirect to `one`
-  { path: 'main', component: MainComponent },
+  { path: '**', component: MainComponent },
 ];
 // configures NgModule imports and exports
 @NgModule({
