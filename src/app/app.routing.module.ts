@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 import { GuardGuard } from './guard.guard';
 import { HelloComponent } from './hello.component';
-import { LoginComponent } from './main/login/login.component';
+import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 
 //const routes: Routes = []; // sets up routes constant where you define your routes
@@ -22,12 +22,12 @@ const routes: Routes = [
     //   },
     // ],
   },
-  { path: 'two', component: HelloComponent, canActivate: [GuardGuard] },
+  { path: 'two', component: MainComponent, canActivate: [GuardGuard] },
   // { path: 'two/:id', component: TwoComponent },
   // { path: 'three', component: ThreeComponent },
   // { path: 'three/:id', component: ThreeComponent },
   // { path: '', redirectTo: '/main', pathMatch: 'full' }, // redirect to `one`
-  { path: '**', component: MainComponent },
+  { path: '**', component: LoginComponent },
 ];
 // configures NgModule imports and exports
 @NgModule({
