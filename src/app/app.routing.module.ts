@@ -22,7 +22,7 @@ const routes: Routes = [
     //   },
     // ],
   },
-  { path: 'two', component: MainComponent, canActivate: [GuardGuard] },
+  { path: 'two/:id', component: MainComponent, canActivate: [GuardGuard] },
   // { path: 'two/:id', component: TwoComponent },
   // { path: 'three', component: ThreeComponent },
   // { path: 'three/:id', component: ThreeComponent },

@@ -1,18 +1,21 @@
 import { Component, VERSION } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent  {
+export class AppComponent {
   constructor(private router: Router) {}
 
   name = 'Angular ' + VERSION.major;
 
+  ngOnInit() {
+    localStorage.setItem('logged', 'false');
+  }
+
   loginSucces() {
-    this.router.navigate(["two", 365]);
+    this.router.navigate(['two', 365]);
   }
 }
