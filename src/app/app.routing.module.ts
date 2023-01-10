@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 import { GuardGuard } from './guard.guard';
 import { HelloComponent } from './hello.component';
 import { LoginComponent } from './login/login.component';
-import { MainComponent } from './main/main.component';
+// import { MainComponent } from './main/main.component';
+import { StudentsComponent } from './students/students.component';
 
 //const routes: Routes = []; // sets up routes constant where you define your routes
 const routes: Routes = [
@@ -22,7 +23,7 @@ const routes: Routes = [
     //   },
     // ],
   },
-  { path: 'two/:id', component: MainComponent, canActivate: [GuardGuard] },
+  { path: 'two/:id', component: StudentsComponent, canActivate: [GuardGuard] },
   // { path: 'two/:id', component: TwoComponent },
   // { path: 'three', component: ThreeComponent },
   // { path: 'three/:id', component: ThreeComponent },

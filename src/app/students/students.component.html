@@ -1,0 +1,12 @@
+<div *ngFor="let student of students">
+  <p>{{ student.name }}</p>
+  <button (click)="updateStudent(student.id, 'newName')">Update</button>
+  <button (click)="deleteStudent(student.id)">Delete</button>
+</div>
+<br />
+<input
+  type="text"
+  [(ngModel)]="newStudentName"
+  placeholder="New Student name"
+/>
+<button (click)="addStudent(newStudentName)">Add</button>
