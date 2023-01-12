@@ -1,0 +1,16 @@
+<div *ngFor="let student of students">
+<p>{{ student.name }} {{ student.lastName }}</p>
+<p>Class: {{ student.class }}</p>
+<p>Age: {{ student.age }}</p>
+<p>Birthdate: {{ student.birthDate.toDateString() }}</p>
+<p>Department: {{ student.department }}</p>
+<p>Gender: {{ student.gender }}</p>
+<p>Grade Average: {{ student.gradeAverage }}</p>
+<p>Disabled: {{ student.disable }}</p>
+<p>
+  Awards:
+  <ng-template *ngFor="let award of student.awards">{{ award }}</ng-template>
+</p>
+<p>Last Edit: {{ student.lastEdit }}</p>
+<br />
+</div>
