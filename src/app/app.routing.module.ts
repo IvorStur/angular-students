@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+import { CreateComponent } from './create/create.component';
 import { DetailsComponent } from './details/details.component';
 import { GuardGuard } from './guard.guard';
 import { HelloComponent } from './hello.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   },
   { path: 'two/:id', component: MainComponent, canActivate: [GuardGuard] },
   { path: 'details', component: DetailsComponent, canActivate: [GuardGuard] },
+  { path: 'create', component: CreateComponent, canActivate: [GuardGuard] },
   // { path: 'two/:id', component: TwoComponent },
   // { path: 'three', component: ThreeComponent },
   // { path: 'three/:id', component: ThreeComponent },

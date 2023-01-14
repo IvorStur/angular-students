@@ -62,5 +62,9 @@ export class MainComponent implements OnInit {
   details(student: any) {
     this.router.navigate(['details', { student: JSON.stringify(student) }]);
   }
+
+  create() {
+    this.router.navigate(['create']);
+  }
   
 }
