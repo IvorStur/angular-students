@@ -1,6 +1,6 @@
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit({name: name.value})">
   <label for="name">First Name:</label><br />
-  <input type="text" id="name" name="name" /><br />
+  <input type="text" #name name="name" /><br />
 
   <label for="lastName">Last Name:</label><br />
   <input type="text" id="lastName" name="lastName" /><br />
@@ -36,4 +36,6 @@
 
   <label for="awards">Awards:</label><br />
   <input type="text" id="awards" name="awards" /><br />
+  <input type="submit" value="Create"/>
 </form>
+
