@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   password: string;
   formSubmit() {
-    if (this.password == 'admin') {
+    if (this.password == '1') {
       localStorage.setItem('logged', 'true');
       this.router.navigate(['two', 365]);
     }

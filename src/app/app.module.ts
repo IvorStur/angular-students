@@ -8,10 +8,17 @@ import { AppRoutingModule } from './app.routing.module';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { GuardGuard } from './guard.guard';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, FormsModule],
-  declarations: [AppComponent, HelloComponent, LoginComponent, MainComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    LoginComponent,
+    MainComponent,
+    DetailsComponent,
+  ],
   bootstrap: [AppComponent],
   providers: [GuardGuard],
 })

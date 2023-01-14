@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Student {
   name: string;
@@ -20,19 +21,32 @@ interface Student {
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.students = [
       {
         name: 'John',
         lastName: 'Doe',
-        class: '12th',
-        age: Math.floor(Math.random() * 100),
+        class: '1.B',
+        age: 9,
         birthDate: new Date('2019-08-13'),
         department: 'Science',
         gender: 'Male',
-        gradeAverage: Math.random() * 100,
+        gradeAverage: 2.3,
+        disable: 'No',
+        awards: ['Even firster than the first prize in science fair'],
+        lastEdit: new Date(),
+      },
+      {
+        name: 'Jozef',
+        lastName: 'Kral',
+        class: '1.A',
+        age: 9,
+        birthDate: new Date('2019-02-11'),
+        department: 'Science',
+        gender: 'Female',
+        gradeAverage: 3.2,
         disable: 'No',
         awards: ['First prize in science fair'],
         lastEdit: new Date(),
@@ -42,4 +56,11 @@ export class MainComponent implements OnInit {
   }
 
   students: Student[];
+  // details() {
+  //   this.router.navigate(['details']);
+  // };
+  details(student: any) {
+    this.router.navigate(['details', { student: JSON.stringify(student) }]);
+  }
+  
 }
