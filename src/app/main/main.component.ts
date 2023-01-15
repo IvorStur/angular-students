@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { StudentService } from '../services/student.service';
 
 interface Student {
+  id: number;
   name: string;
   lastName: string;
   class: string;

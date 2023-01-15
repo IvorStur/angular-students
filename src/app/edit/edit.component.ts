@@ -32,7 +32,7 @@ export class EditComponent implements OnInit {
     // this.student.age = new Date(now - bd).getFullYear();
     // console.log(this.student.age)
     this.student.lastEdit = new Date();
-    this.studentService.addStudent(this.student);
+    this.studentService.saveStudent(this.student);
     this.router.navigate(['two', 365]);
   }
 }

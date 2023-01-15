@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { StudentService } from '../services/student.service';
 
 interface Student {
+  id: number;
   name: string;
   lastName: string;
   class: string;
@@ -29,6 +30,7 @@ export class CreateComponent implements OnInit {
 
   ngOnInit() {
     this.student = {
+      id: 0,
       name: '',
       lastName: '',
       class: '',
@@ -52,6 +54,10 @@ export class CreateComponent implements OnInit {
     // let bd = this.student.birthDate.getTime();
     // this.student.age = new Date(now - bd).getFullYear();
     // console.log(this.student.age)
+    let id1 = Number(localStorage.getItem('id')) + 1;
+    this.student.id = id1;
+    let id_out = String(id1);
+    localStorage.setItem('id', id_out);
     this.student.lastEdit = new Date();
     this.studentService.addStudent(this.student);
     this.router.navigate(['two', 365]);
