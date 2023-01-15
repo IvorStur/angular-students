@@ -22,7 +22,6 @@ import { EditComponent } from './edit/edit.component';
     MainComponent,
     DetailsComponent,
     CreateComponent,
-    EditComponent
   ],
   bootstrap: [AppComponent],
   providers: [GuardGuard, StudentService],

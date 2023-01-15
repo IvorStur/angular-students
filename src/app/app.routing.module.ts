@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 import { CreateComponent } from './create/create.component';
 import { DetailsComponent } from './details/details.component';
+// import { EditComponent } from './edit/edit.component';
 import { GuardGuard } from './guard.guard';
 import { HelloComponent } from './hello.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
-
-
 
 //const routes: Routes = []; // sets up routes constant where you define your routes
 const routes: Routes = [
@@ -29,7 +28,7 @@ const routes: Routes = [
   { path: 'two/:id', component: MainComponent, canActivate: [GuardGuard] },
   { path: 'details', component: DetailsComponent, canActivate: [GuardGuard] },
   { path: 'create', component: CreateComponent, canActivate: [GuardGuard] },
-  { path: 'edit', component: CreateComponent, canActivate: [GuardGuard] },
+  // { path: 'edit', component: EditComponent, canActivate: [GuardGuard] },
   // { path: 'two/:id', component: TwoComponent },
   // { path: 'three', component: ThreeComponent },
   // { path: 'three/:id', component: ThreeComponent },
