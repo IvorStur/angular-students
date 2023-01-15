@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { GuardGuard } from './guard.guard';
 import { DetailsComponent } from './details/details.component';
 import { CreateComponent } from './create/create.component';
+import { StudentService } from './services/student.service';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, FormsModule],
@@ -19,9 +20,9 @@ import { CreateComponent } from './create/create.component';
     LoginComponent,
     MainComponent,
     DetailsComponent,
-    CreateComponent
+    CreateComponent,
   ],
   bootstrap: [AppComponent],
-  providers: [GuardGuard],
+  providers: [GuardGuard, StudentService],
 })
 export class AppModule {}

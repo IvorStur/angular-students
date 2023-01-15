@@ -3,10 +3,15 @@
   <input type="text" [(ngModel)]="student.name" id="name" name="name" /><br />
 
   <label for="lastName">Last Name:</label><br />
-  <input type="text" [(ngModel)]="student.lastName" id="lastName" name="lastName" /><br />
+  <input
+    type="text"
+    [(ngModel)]="student.lastName"
+    id="lastName"
+    name="lastName"
+  /><br />
 
   <label for="class">Class:</label>
-  <select name="class" id="class">
+  <select name="class" [(ngModel)]="student.class" id="class">
     <option value="1.A">1.A</option>
     <option value="1.B">1.B</option>
     <option value="2.A">2.A</option>
@@ -14,28 +19,50 @@
   ><br />
 
   <label for="name1">Date Of Birth:</label>
-  <input type="date" id="name1" name="name1" /><br />
+  <input
+    type="date"
+    [(ngModel)]="student.birthDate"
+    id="name1"
+    name="name1"
+  /><br />
+
+  <label for="department">Deparment:</label><br />
+  <input
+    type="text"
+    [(ngModel)]="student.department"
+    id="department"
+    name="department"
+  /><br />
 
   <label for="gender">Gender:</label>
-  <select name="class" id="class">
+  <select name="class" [(ngModel)]="student.gender" id="class">
     <option value="Male">Male</option>
     <option value="Female">Female</option>
     <option value="Other">Other</option></select
   ><br />
 
   <label for="gradeAverage">Grade Average:</label><br />
-  <input type="text" id="gradeAverage" name="gradeAverage" /><br />
+  <input
+    type="text"
+    [(ngModel)]="student.gradeAverage"
+    id="gradeAverage"
+    name="gradeAverage"
+  /><br />
   <!-- <input type="range" id="gradeAverage" name="gradeAverage" 
          min="1" max="5" value="1" step="0.1"><br /> -->
 
   <label for="disabled">Disabled:</label><br />
-  <select name="disabled" id="disabled">
+  <select name="disabled" [(ngModel)]="student.disable" id="disabled">
     <option value="NO">NO</option>
     <option value="YES">YES</option></select
   ><br />
 
   <label for="awards">Awards:</label><br />
-  <input type="text" id="awards" name="awards" /><br />
-  <input type="submit" value="Create"/>
+  <input
+    type="text"
+    [(ngModel)]="student.awards"
+    id="awards"
+    name="awards"
+  /><br />
+  <input type="submit" value="Create" />
 </form>
-

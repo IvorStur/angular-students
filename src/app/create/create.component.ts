@@ -24,9 +24,24 @@ export class CreateComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.student = {
+      name: '',
+      lastName: '',
+      class: '',
+      age: 0,
+      birthDate: new Date(),
+      department: '',
+      gender: '',
+      gradeAverage: 0,
+      disable: '',
+      awards: [],
+      lastEdit: new Date()
+   }
+   
+  }
 
   onSubmit() {
-    console.log(this.student);
+    
   }
 }
