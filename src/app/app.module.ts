@@ -11,7 +11,6 @@ import { GuardGuard } from './guard.guard';
 import { DetailsComponent } from './details/details.component';
 import { CreateComponent } from './create/create.component';
 import { StudentService } from './services/student.service';
-import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, FormsModule],
