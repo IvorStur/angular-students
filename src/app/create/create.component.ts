@@ -22,6 +22,7 @@ interface Student {
 })
 export class CreateComponent implements OnInit {
   student: Student;
+  date: Date = new Date();
 
   constructor(private studentService: StudentService) {}
 
@@ -43,6 +44,12 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit() {
+    // console.log(this.date.getFullYear())
+    // const ageInMilliseconds = this.date.getTime() - this.student.birthDate.getTime();
+    // this.student.age = ageInMilliseconds / 31536000000;
+    let now = new Date().getTime();
+    let bd = this.student.birthDate.getTime();
+    this.student.age = now - bd;
     this.studentService.addStudent(this.student);
   }
 }
