@@ -35,4 +35,11 @@ export class EditComponent implements OnInit {
     this.studentService.saveStudent(this.student);
     this.router.navigate(['two', 365]);
   }
+
+  back() {
+    this.router.navigate([
+      'details',
+      { student: JSON.stringify(this.student) },
+    ]);
+  }
 }

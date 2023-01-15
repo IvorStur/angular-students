@@ -62,4 +62,8 @@ export class CreateComponent implements OnInit {
     this.studentService.addStudent(this.student);
     this.router.navigate(['two', 365]);
   }
+
+  back() {
+    this.router.navigate(['two', 365]);
+  }
 }

@@ -41,6 +41,19 @@ export class StudentService {
     }
   }
 
+  deleteStudent(student: Student) {
+    const studentIndex = this.students.findIndex((s) => s.id === student.id);
+    if (studentIndex !== -1) {
+      const studentToDelete = this.students[studentIndex];
+      this.students.splice(studentIndex, 1);
+      console.log(
+        `Deleted student: ${studentToDelete.name} ${studentToDelete.lastName}`
+      );
+    } else {
+      console.log('not found');
+    }
+  }
+
   getStudents() {
     return this.students;
   }
