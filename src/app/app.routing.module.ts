@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'two/:id', component: MainComponent, canActivate: [GuardGuard] },
   { path: 'details', component: DetailsComponent, canActivate: [GuardGuard] },
   { path: 'create', component: CreateComponent, canActivate: [GuardGuard] },
+  { path: 'edit', component: CreateComponent, canActivate: [GuardGuard] },
   // { path: 'two/:id', component: TwoComponent },
   // { path: 'three', component: ThreeComponent },
   // { path: 'three/:id', component: ThreeComponent },

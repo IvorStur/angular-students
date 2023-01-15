@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StudentService } from '../services/student.service';
 
 interface Student {
@@ -22,9 +23,9 @@ interface Student {
 })
 export class CreateComponent implements OnInit {
   student: Student;
-  date: Date = new Date();
+  // date: Date = new Date();
 
-  constructor(private studentService: StudentService) {}
+  constructor(private studentService: StudentService, private router: Router) {}
 
   ngOnInit() {
     this.student = {
@@ -38,18 +39,21 @@ export class CreateComponent implements OnInit {
       gradeAverage: 0,
       disable: '',
       awards: [],
-      lastEdit: new Date()
-   }
-   
+      lastEdit: new Date(),
+    };
   }
 
   onSubmit() {
     // console.log(this.date.getFullYear())
     // const ageInMilliseconds = this.date.getTime() - this.student.birthDate.getTime();
     // this.student.age = ageInMilliseconds / 31536000000;
-    let now = new Date().getTime();
-    let bd = this.student.birthDate.getTime();
-    this.student.age = now - bd;
+
+    // let now = new Date().getTime();
+    // let bd = this.student.birthDate.getTime();
+    // this.student.age = new Date(now - bd).getFullYear();
+    // console.log(this.student.age)
+    this.student.lastEdit = new Date();
     this.studentService.addStudent(this.student);
+    this.router.navigate(['two', 365]);
   }
 }
