@@ -1,10 +1,10 @@
 <button (click)="create()" type="submit" class="btn-default btn">
 Create
 </button>
-<div *ngFor="let student of students">
+<div *ngFor="let student of students" class="knt">
   <div>
     <p>{{ student.name }} {{ student.lastName }} Class: {{ student.class }}</p>
-    <button (click)="details(student)" type="submit" class="btn-default btn">
+    <button class="details" (click)="details(student)" type="submit" class="btn-default btn-details">
       Details
     </button>
   </div>
