@@ -20,13 +20,13 @@ interface Student {
   styleUrls: ['./create.component.css'],
 })
 export class CreateComponent implements OnInit {
-  student: any;
+  student: Student;
 
   constructor() {}
 
   ngOnInit() {}
 
   onSubmit() {
-    
+    console.log(this.student);
   }
 }

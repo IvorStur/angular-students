@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { GuardGuard } from './guard.guard';
 import { DetailsComponent } from './details/details.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, FormsModule],
@@ -18,6 +19,7 @@ import { DetailsComponent } from './details/details.component';
     LoginComponent,
     MainComponent,
     DetailsComponent,
+    CreateComponent
   ],
   bootstrap: [AppComponent],
   providers: [GuardGuard],
