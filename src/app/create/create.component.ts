@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from '../services/student.service';
 
 interface Student {
   name: string;
@@ -22,7 +23,7 @@ interface Student {
 export class CreateComponent implements OnInit {
   student: Student;
 
-  constructor() {}
+  constructor(private studentService: StudentService) {}
 
   ngOnInit() {
     this.student = {
@@ -42,6 +43,6 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit() {
-    
+    this.studentService.addStudent(this.student);
   }
 }
