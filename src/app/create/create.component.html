@@ -45,12 +45,15 @@
   /><br />
 
   <label for="department">Deparment:</label><br />
-  <input
-    type="text"
+  <select
+    name="department"
     [(ngModel)]="student.department"
     id="department"
-    name="department"
-  /><br />
+    default="student.department"
+  >
+    <option value="Male">Science</option>
+    <option value="Female">Physics</option></select
+  ><br />
 
   <label for="gender">Gender:</label>
   <select name="class" [(ngModel)]="student.gender" id="class">
@@ -88,7 +91,7 @@
       name.valid &&
       lastName.valid &&
       age.value >= 0 &&
-      (toNumber(gradeAverage.value) >= 1 && toNumber(gradeAverage.value) <= 5)
+      toNumber(gradeAverage.value) >= 1 && toNumber(gradeAverage.value) <= 5
     "
     type="submit"
     value="Create"
@@ -103,7 +106,7 @@
   >
     Grade average is invalid.
   </div>
-  
+
   <!-- <ng-template #elseBlock><p>Name and Lastname are mandatory.</p></ng-template> -->
   <!-- *ngIf="student.name && student.lastName" -->
 </form>

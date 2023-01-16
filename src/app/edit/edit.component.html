@@ -54,13 +54,15 @@
   /><br />
 
   <label for="department">Deparment:</label><br />
-  <input
-    type="text"
+  <select
+    name="department"
     [(ngModel)]="student.department"
     id="department"
-    name="department"
     default="student.department"
-  /><br />
+  >
+    <option value="Male">Science</option>
+    <option value="Female">Physics</option></select
+  ><br />
 
   <label for="gender">Gender:</label>
   <select
@@ -110,7 +112,7 @@
       name.valid &&
       lastName.valid &&
       age.value >= 0 &&
-      (toNumber(gradeAverage.value) >= 1 && toNumber(gradeAverage.value) <= 5)
+      toNumber(gradeAverage.value) >= 1 && toNumber(gradeAverage.value) <= 5
     "
     type="submit"
     value="Save"
