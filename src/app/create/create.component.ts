@@ -68,4 +68,9 @@ export class CreateComponent implements OnInit {
   back() {
     this.router.navigate(['two', 365]);
   }
+
+  toNumber(cislo: string) {
+    console.log('cislo: ' + cislo);
+    return Number(cislo);
+  }
 }

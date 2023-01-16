@@ -41,6 +41,7 @@
     id="age"
     name="age"
     default="student.age"
+    #age="ngModel"
   /><br />
 
   <label for="name1">Date Of Birth:</label>
@@ -80,6 +81,7 @@
     id="gradeAverage"
     name="gradeAverage"
     default="student.gradeAverage"
+    #gradeAverage="ngModel"
   /><br />
   <!-- <input type="range" id="gradeAverage" name="gradeAverage" 
        min="1" max="5" value="1" step="0.1"><br /> -->
@@ -103,12 +105,26 @@
     name="awards"
     default="student.awards"
   /><br />
-  <input *ngIf="name.valid && lastName.valid" type="submit" value="Save" />
   <input
-    class="invalid"
-    *ngIf="name.invalid || lastName.invalid"
-    type="button"
-    value="Name and Lastname are mandatory."
+    *ngIf="
+      name.valid &&
+      lastName.valid &&
+      age.value >= 0 &&
+      (toNumber(gradeAverage.value) >= 1 && toNumber(gradeAverage.value) <= 5)
+    "
+    type="submit"
+    value="Save"
   />
+  <div class="invalid" *ngIf="name.invalid || lastName.invalid">
+    Name and Lastname are mandatory.
+  </div>
+  <div class="invalid" *ngIf="age.value < 0">Age cannot be negative.</div>
+  <div
+    class="invalid"
+    *ngIf="toNumber(gradeAverage.value) < 1 || toNumber(gradeAverage.value) > 5"
+  >
+    Grade average is invalid.
+  </div>
+  <!-- value="Name and Lastname are mandatory." -->
 </form>
 <button (click)="back()" type="button">Back</button>

@@ -28,7 +28,13 @@
   ><br />
 
   <label for="age">Age:</label><br />
-  <input type="text" [(ngModel)]="student.age" id="age" name="age" /><br />
+  <input
+    type="text"
+    [(ngModel)]="student.age"
+    id="age"
+    name="age"
+    #age="ngModel"
+  /><br />
 
   <label for="name1">Date Of Birth:</label>
   <input
@@ -59,6 +65,7 @@
     [(ngModel)]="student.gradeAverage"
     id="gradeAverage"
     name="gradeAverage"
+    #gradeAverage="ngModel"
   /><br />
   <!-- <input type="range" id="gradeAverage" name="gradeAverage" 
          min="1" max="5" value="1" step="0.1"><br /> -->
@@ -77,16 +84,26 @@
     name="awards"
   /><br />
   <input
-  *ngIf="name.valid && lastName.valid"
+    *ngIf="
+      name.valid &&
+      lastName.valid &&
+      age.value >= 0 &&
+      (toNumber(gradeAverage.value) >= 1 && toNumber(gradeAverage.value) <= 5)
+    "
     type="submit"
     value="Create"
   />
-  <input
-  class="invalid"
-  *ngIf="name.invalid || lastName.invalid"
-    type="button"
-    value="Name and Lastname are mandatory."
-  />
+  <div class="invalid" *ngIf="name.invalid || lastName.invalid">
+    Name and Lastname are mandatory.
+  </div>
+  <div class="invalid" *ngIf="age.value < 0">Age cannot be negative.</div>
+  <div
+    class="invalid"
+    *ngIf="toNumber(gradeAverage.value) < 1 || toNumber(gradeAverage.value) > 5"
+  >
+    Grade average is invalid.
+  </div>
+  
   <!-- <ng-template #elseBlock><p>Name and Lastname are mandatory.</p></ng-template> -->
   <!-- *ngIf="student.name && student.lastName" -->
 </form>

@@ -42,4 +42,9 @@ export class EditComponent implements OnInit {
       { student: JSON.stringify(this.student) },
     ]);
   }
+
+  toNumber(cislo: string) {
+    console.log("cislo: " + cislo)
+    return Number(cislo);
+  }
 }
