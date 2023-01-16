@@ -9,6 +9,7 @@ import { StudentService } from '../services/student.service';
 })
 export class EditComponent implements OnInit {
   student: any;
+  // time: number = new Date().getTime();
 
   constructor(
     private router: Router,
@@ -46,5 +47,9 @@ export class EditComponent implements OnInit {
   toNumber(cislo: string) {
     console.log("cislo: " + cislo)
     return Number(cislo);
+  }
+
+  timer(date: Date) {
+    return date.getTime();
   }
 }

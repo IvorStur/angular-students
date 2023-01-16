@@ -69,4 +69,9 @@ export class MainComponent implements OnInit {
   create() {
     this.router.navigate(['create']);
   }
+
+  logout() {
+    localStorage.setItem('logged', 'false');
+    this.router.navigate(["one"])
+  }
 }

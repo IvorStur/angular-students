@@ -51,6 +51,7 @@
     id="name1"
     name="name1"
     default="student.birthDate"
+    #name1="ngModel"
   /><br />
 
   <label for="department">Deparment:</label><br />
@@ -127,6 +128,12 @@
   >
     Grade average is invalid.
   </div>
+  <!-- <div
+    class="invalid"
+    *ngIf="timer(name1) > time"
+  >
+    Grade average is invalid.
+  </div> -->
   <!-- value="Name and Lastname are mandatory." -->
 </form>
 <button (click)="back()" type="button">Back</button>
