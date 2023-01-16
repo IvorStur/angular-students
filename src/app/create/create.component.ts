@@ -24,6 +24,8 @@ interface Student {
 })
 export class CreateComponent implements OnInit {
   student: Student;
+  name1: string;
+  name2: string;
   // date: Date = new Date();
 
   constructor(private studentService: StudentService, private router: Router) {}

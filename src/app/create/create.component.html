@@ -1,6 +1,13 @@
 <form (ngSubmit)="onSubmit()">
   <label for="name">First Name:</label><br />
-  <input type="text" [(ngModel)]="student.name" id="name" name="name" /><br />
+  <input
+    type="text"
+    [(ngModel)]="student.name"
+    id="name"
+    name="name"
+    required
+    #name="ngModel"
+  /><br />
 
   <label for="lastName">Last Name:</label><br />
   <input
@@ -8,6 +15,8 @@
     [(ngModel)]="student.lastName"
     id="lastName"
     name="lastName"
+    required
+    #lastName="ngModel"
   /><br />
 
   <label for="class">Class:</label>
@@ -67,6 +76,18 @@
     id="awards"
     name="awards"
   /><br />
-  <input type="submit" value="Create" />
+  <input
+  *ngIf="name.valid && lastName.valid"
+    type="submit"
+    value="Create"
+  />
+  <input
+  class="invalid"
+  *ngIf="name.invalid || lastName.invalid"
+    type="button"
+    value="Name and Lastname are mandatory."
+  />
+  <!-- <ng-template #elseBlock><p>Name and Lastname are mandatory.</p></ng-template> -->
+  <!-- *ngIf="student.name && student.lastName" -->
 </form>
 <button type="button" (click)="back()">Back</button>

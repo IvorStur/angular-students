@@ -6,6 +6,8 @@
     id="name"
     name="name"
     default="student.name"
+    required
+    #name="ngModel"
   /><br />
 
   <label for="lastName">Last Name:</label><br />
@@ -15,6 +17,8 @@
     id="lastName"
     name="lastName"
     default="student.lastName"
+    required
+    #lastName="ngModel"
   /><br />
 
   <label for="class">Class:</label>
@@ -99,6 +103,12 @@
     name="awards"
     default="student.awards"
   /><br />
-  <input type="submit" value="Save" />
+  <input *ngIf="name.valid && lastName.valid" type="submit" value="Save" />
+  <input
+    class="invalid"
+    *ngIf="name.invalid || lastName.invalid"
+    type="button"
+    value="Name and Lastname are mandatory."
+  />
 </form>
 <button (click)="back()" type="button">Back</button>
